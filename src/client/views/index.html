@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analyzer Test</title>
+</head>
+
+<body>
+
+    <header>
+        <p>New Articles Evaluation using NLP</p>
+    </header>
+
+    <main>
+        <section>
+            <form onsubmit="return Client.submitArticleLink(event)">
+                <input aria-label="News Article Link" id="url" type="text" name="Article Link" value=""
+                    placeholder="Please Enter the Article Link">
+                <input type="submit" name="Submit" value="submit" onclick="return Client.submitArticleLink(event)"
+                    onsubmit="return submitArticleLink(event)">
+            </form>
+        </section>
+
+        <section>
+            <h4><strong>Article Sentiment Analysis Results:</strong></h4>
+            <div id="results">
+                <div class='category' id="agreement">Agreement:</div>
+                <div class='category' id="subjectivity">Subjectivity:</div>
+                <div class='category' id="confidence">Confidence:</div>
+                <div class='category' id="irony">Irony:</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed By Dina Khorshed</p>
+    </footer>
+
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
